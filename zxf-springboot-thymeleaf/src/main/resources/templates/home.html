@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML test</title>
+        <script th:inline="javascript">
+            var jsP = [[${jsP}]];
+            console.log("#########" + jsP);
+        </script>
+    </head>
+    <body>
+        <h1>HTML test</h1>
+        <p>[[${htmlP}]];</p>
+    </body>
+</html>

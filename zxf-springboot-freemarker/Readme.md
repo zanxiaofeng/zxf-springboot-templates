@@ -5,11 +5,11 @@
 ## 自动转义与提示(HTML,XML)
 ### 自动转义
 - 文档级 <#ftl autoesc=false>
-- 块级 <#autoesc>xxxxx<#autoesc>  <#noautoesc>xxxxx<#noautoesc>
+- 块级 <#autoesc>xxxxx</#autoesc>  <#noautoesc>xxxxx</#noautoesc>
 - 行级 ?esc ?no_esc
 ### 转义提示
 - 文档级 By filename(ftlh for html, ftlx for xml) or <#ftl output_format="XML">
-- 块级 <#outputformat "HTML">xxxxxx<#outputformat>
+- 块级 <#outputformat "HTML">xxxxxx</#outputformat>
 ## 手动转义-无法自动转义(JS, JSON)
 - ?js_string
 - ?json_string
@@ -19,10 +19,10 @@
 - freemarker.core.JSONOutputFormat
 
 # Output Formats
-
+![img.png](img.png)
 
 # Test html&js Injection
-- http://localhost:8080/html?htmlP=hello<br/>world&jsP=";alert('<0>');var test=" 
+- http://localhost:8080/html?htmlP="hello<br>%26world'&jsP=abc";alert("<0>");" 
 
 # Test json Injection
 - http://localhost:8080/json?jsonP=123","ddd": "123"
